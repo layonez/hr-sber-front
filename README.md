@@ -1,4 +1,4 @@
-# react-hooks-mobx-state-tree
+# HR SBER CODE HACKATHON FRONTEND
 
 ![GitHub](https://img.shields.io/github/license/impulse/react-hooks-mobx-state-tree)
 <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/impulse/react-hooks-mobx-state-tree.svg">
