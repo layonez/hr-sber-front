@@ -1,4 +1,4 @@
-@import url("https://rsms.me/inter/inter.css");
+@import url('https://rsms.me/inter/inter.css');
 
 @tailwind base;
 @tailwind components;
@@ -17,11 +17,11 @@
 
 ::-webkit-scrollbar-thumb {
   border-radius: 1rem;
-  background: theme("colors.gray.200");
+  background: theme('colors.gray.200');
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: theme("colors.orange.500");
+  background: theme('colors.orange.500');
 }
 
 @tailwind utilities;

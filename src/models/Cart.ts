@@ -3,20 +3,20 @@ import {
   Instance,
   SnapshotIn,
   getParent,
-  destroy
-} from "mobx-state-tree";
+  destroy,
+} from 'mobx-state-tree';
 
 export const Tag = types.model({
-  name: types.string
+  name: types.string,
 });
 
 export const CartItem = types
   .model({
     name: types.string,
     price: types.number,
-    tags: types.optional(types.array(Tag), [])
+    tags: types.optional(types.array(Tag), []),
   })
-  .actions(self => ({
+  .actions((self) => ({
     changeName(newName: string) {
       self.name = newName;
     },
@@ -25,14 +25,14 @@ export const CartItem = types
     },
     remove() {
       getParent<typeof Cart>(self, 2).remove(self);
-    }
+    },
   }));
 
 export const Cart = types
   .model({
-    items: types.optional(types.array(CartItem), [])
+    items: types.optional(types.array(CartItem), []),
   })
-  .actions(self => ({
+  .actions((self) => ({
     addCartItem(
       cartItem: SnapshotIn<typeof CartItem> | Instance<typeof CartItem>
     ) {
@@ -40,13 +40,13 @@ export const Cart = types
     },
     remove(item: SnapshotIn<typeof CartItem>) {
       destroy(item);
-    }
+    },
   }))
-  .views(self => ({
+  .views((self) => ({
     get totalItems() {
       return self.items.length;
     },
     get totalPrice() {
       return self.items.reduce((sum, entry) => sum + entry.price, 0);
-    }
+    },
   }));

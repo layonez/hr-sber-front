@@ -1,14 +1,14 @@
-import { types } from "mobx-state-tree";
+import { types } from 'mobx-state-tree';
 
 export const Counter = types
   .model({
-    count: types.number
+    count: types.number,
   })
-  .actions(self => ({
+  .actions((self) => ({
     increment() {
       self.count++;
     },
     decrement() {
       self.count--;
-    }
+    },
   }));
