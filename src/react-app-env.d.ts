@@ -13,3 +13,8 @@ declare module '@editorjs/list' {
   const value: any;
   export default value;
 }
+
+declare module 'react-responsive-masonry' {
+  const value: any;
+  export default value;
+}

@@ -1,19 +1,14 @@
 import { useContext, createContext } from 'react';
 import { types, Instance, onSnapshot } from 'mobx-state-tree';
 
-import { Counter } from './Counter';
-import { Cart } from './Cart';
+import { Feed } from './Feed';
 
 const RootModel = types.model({
-  counter: Counter,
-  cart: Cart,
+  feed: Feed,
 });
 
 let initialState = RootModel.create({
-  counter: {
-    count: 0,
-  },
-  cart: { items: [] },
+  feed: { posts: [] },
 });
 
 const data = localStorage.getItem('rootState');
