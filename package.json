@@ -1,8 +1,11 @@
 {
-  "name": "react-ts-hooks-mst",
+  "name": "hr-sber-front",
   "version": "0.1.0",
   "private": false,
   "dependencies": {
+    "@editorjs/editorjs": "^2.19.1",
+    "@editorjs/header": "^2.6.1",
+    "@editorjs/list": "^1.6.2",
     "@material-ui/core": "^4.11.3",
     "@material-ui/icons": "^4.11.2",
     "markdown-to-jsx": "^7.1.1",
