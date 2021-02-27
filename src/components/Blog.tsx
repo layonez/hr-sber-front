@@ -1,6 +1,5 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import CssBaseline from '@material-ui/core/CssBaseline';
 import Grid from '@material-ui/core/Grid';
 import Container from '@material-ui/core/Container';
 import GitHubIcon from '@material-ui/icons/GitHub';
@@ -10,7 +9,6 @@ import Header from './Header';
 import FeaturedPost from './FeaturedPost';
 import Main from './Main';
 import Sidebar from './Sidebar';
-import Footer from './Footer';
 import post1 from '../assets/blog-post.1.md';
 import post2 from '../assets/blog-post.2.md';
 import post3 from '../assets/blog-post.3.md';
@@ -93,9 +91,8 @@ export default function Blog() {
 
   return (
     <React.Fragment>
-      <CssBaseline />
-      <Container maxWidth='lg'>
-        <Header title='Blog' sections={sections} />
+      <Container maxWidth="lg">
+        <Header title="Blog" sections={sections} />
         <main>
           <Grid container spacing={4}>
             {featuredPosts.map((post) => (
@@ -103,7 +100,7 @@ export default function Blog() {
             ))}
           </Grid>
           <Grid container spacing={5} className={classes.mainGrid}>
-            <Main title='From the firehose' posts={posts} />
+            <Main title="From the firehose" posts={posts} />
             <Sidebar
               title={sidebar.title}
               description={sidebar.description}
@@ -113,10 +110,6 @@ export default function Blog() {
           </Grid>
         </main>
       </Container>
-      <Footer
-        title='Footer'
-        description='Something here to give the footer a purpose!'
-      />
     </React.Fragment>
   );
 }

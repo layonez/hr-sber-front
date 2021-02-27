@@ -10,33 +10,21 @@ https://upbeat-galileo-7b7eb1.netlify.app/
 
 Example project of how to use mobx-state-tree (MST) with React Hooks and TypeScript.
 
-Bootstrapped with `create-react-app` and styled with Tailwind CSS.
+Bootstrapped with `create-react-app` and styled with Material UI.
 
 ## Setup
 
-Clone the repo and run `yarn` to install all dependencies.
+Clone the repo and run `npm install` to install all dependencies.
 
 ## Available Scripts
 
-### `yarn dev`
-
-Watches and rebuilds css changes and starts dev server<br>
-
-### `yarn start`
+### `npm start`
 
 Builds css once and starts react-scripts.<br>
 
-### `yarn build`
+### `npm run build`
 
 Builds production ready project.<br>
-
-### `yarn build:css`
-
-Builds css once.<br>
-
-### `yarn watch:css`
-
-Watches and rebuilds css.<br>
 
 ## Contributing
 
