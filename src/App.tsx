@@ -29,11 +29,11 @@ const App: React.FC = () => {
           <Route path="/article">
             <CreateArticle />
           </Route>
-          <Route path="/survey">
-            <CreateSurvey />
-          </Route>
           <Route path="/survey/example">
             <ExampleSurvey />
+          </Route>
+          <Route path="/survey">
+            <CreateSurvey />
           </Route>
           <Route path="/">
             <Blog />
