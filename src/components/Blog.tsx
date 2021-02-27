@@ -9,9 +9,6 @@ import Header from './Header';
 import FeaturedPost from './FeaturedPost';
 import Main from './Main';
 import Sidebar from './Sidebar';
-import CreateArticle from './CreateArticle';
-import ExampleSurvey from './ExampleSurvey';
-import Footer from './Footer';
 import post1 from '../assets/blog-post.1.md';
 import post2 from '../assets/blog-post.2.md';
 import post3 from '../assets/blog-post.3.md';
@@ -111,14 +108,8 @@ export default function Blog() {
               social={sidebar.social}
             />
           </Grid>
-          <CreateArticle />
-          <ExampleSurvey />
         </main>
       </Container>
-      <Footer
-        title="Footer"
-        description="Something here to give the footer a purpose!"
-      />
     </React.Fragment>
   );
 }

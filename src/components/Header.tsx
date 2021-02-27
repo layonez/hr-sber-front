@@ -32,12 +32,12 @@ export default function Header(props: { sections: any; title: any }) {
   return (
     <React.Fragment>
       <Toolbar className={classes.toolbar}>
-        <Button size='small'>Subscribe</Button>
+        <Button size="small">Subscribe</Button>
         <Typography
-          component='h2'
-          variant='h5'
-          color='inherit'
-          align='center'
+          component="h2"
+          variant="h5"
+          color="inherit"
+          align="center"
           noWrap
           className={classes.toolbarTitle}
         >
@@ -46,28 +46,30 @@ export default function Header(props: { sections: any; title: any }) {
         <IconButton>
           <SearchIcon />
         </IconButton>
-        <Button variant='outlined' size='small'>
+        <Button variant="outlined" size="small">
           Sign up
         </Button>
       </Toolbar>
-      <Toolbar
-        component='nav'
-        variant='dense'
-        className={classes.toolbarSecondary}
-      >
-        {sections.map((section: { title: string; url: string }) => (
-          <Link
-            color='inherit'
-            noWrap
-            key={section.title}
-            variant='body2'
-            href={section.url}
-            className={classes.toolbarLink}
-          >
-            {section.title}
-          </Link>
-        ))}
-      </Toolbar>
+      {sections && (
+        <Toolbar
+          component="nav"
+          variant="dense"
+          className={classes.toolbarSecondary}
+        >
+          {sections.map((section: { title: string; url: string }) => (
+            <Link
+              color="inherit"
+              noWrap
+              key={section.title}
+              variant="body2"
+              href={section.url}
+              className={classes.toolbarLink}
+            >
+              {section.title}
+            </Link>
+          ))}
+        </Toolbar>
+      )}
     </React.Fragment>
   );
 }

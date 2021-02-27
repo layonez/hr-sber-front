@@ -1,3 +1,4 @@
+import React from 'react';
 import { Model, Survey } from 'survey-react';
 import 'survey-react/survey.css';
 import { makeStyles } from '@material-ui/core/styles';
@@ -6,6 +7,8 @@ import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import TextField from '@material-ui/core/TextField';
 import Typography from '@material-ui/core/Typography';
+
+import Header from './Header';
 
 const useStyles = makeStyles({
   root: { margin: '8px' },
@@ -96,11 +99,14 @@ export default function ExampleSurvey() {
   const classes = useStyles();
 
   return (
-    <Card className={classes.root}>
-      <Typography className={classes.title} variant="h5" component="h2">
-        Example survey
-      </Typography>
-      <Survey model={model} onComplete={onComplete} />
-    </Card>
+    <React.Fragment>
+      <Header title="Survey example" />
+      <Card className={classes.root}>
+        <Typography className={classes.title} variant="h5" component="h2">
+          Example survey
+        </Typography>
+        <Survey model={model} onComplete={onComplete} />
+      </Card>
+    </React.Fragment>
   );
 }
