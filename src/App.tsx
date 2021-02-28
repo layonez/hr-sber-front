@@ -4,6 +4,7 @@ import Typography from '@material-ui/core/Typography';
 import Link from '@material-ui/core/Link';
 
 import CreateArticle from './components/CreateArticle';
+import CreateArticleDemo from './components/CreateArticleDemo';
 import ShowArticle from './components/ShowArticle';
 import CreateSurvey from './components/CreateSurvey';
 import ExampleSurvey from './components/ExampleSurvey';
@@ -40,6 +41,9 @@ const App: React.FC = () => {
         <Switch>
           <Route path='/article/:id'>
             <ShowArticle />
+          </Route>
+          <Route path='/share'>
+            <CreateArticleDemo />
           </Route>
           <Route path='/article'>
             <CreateArticle />

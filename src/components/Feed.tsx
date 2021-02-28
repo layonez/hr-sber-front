@@ -228,7 +228,7 @@ const Feed: React.FC<Props> = observer(() => {
                 // className={classes.button}
                 startIcon={<RateReviewIcon />}
                 component={Link}
-                to="/article"
+                to="/share"
               >
                 Поделиться впечатлениями о курсе
               </Button>
