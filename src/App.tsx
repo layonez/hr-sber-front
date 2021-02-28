@@ -9,46 +9,57 @@ import CreateSurvey from './components/CreateSurvey';
 import ExampleSurvey from './components/ExampleSurvey';
 import Footer from './components/Footer';
 import Feed from './components/Feed';
+import Header from './components/Header';
+import Container from '@material-ui/core/Container';
 
 const Copyright: React.FC = () => {
   return (
-    <Typography variant="body2" color="textSecondary" align="center">
+    <Typography variant='body2' color='textSecondary' align='center'>
       {'Copyright © '}
-      <Link color="inherit" href="https://material-ui.com/">
-        Your Website
+
+      <Link color='inherit' href='https://material-ui.com/'>
+        Sber Creator Studio
       </Link>
       {new Date().getFullYear()}
     </Typography>
   );
 };
 
+const sections = [
+  { title: 'Технологии', url: '#Technology' },
+  { title: 'Дизайн', url: '#Design' },
+  { title: 'Культура компании', url: '#Culture' },
+  { title: 'Стартапы', url: '#Business' },
+];
+
 const App: React.FC = () => {
   return (
-    <React.Fragment>
+    <Container maxWidth='lg'>
+      <Header title='ПУЛЬС' sections={sections} />
       <Router>
         <Switch>
-          <Route path="/article/:id">
+          <Route path='/article/:id'>
             <ShowArticle />
           </Route>
-          <Route path="/article">
+          <Route path='/article'>
             <CreateArticle />
           </Route>
-          <Route path="/survey/example">
+          <Route path='/survey/example'>
             <ExampleSurvey />
           </Route>
-          <Route path="/survey">
+          <Route path='/survey'>
             <CreateSurvey />
           </Route>
-          <Route path="/" default>
+          <Route path='/' default>
             <Feed />
           </Route>
         </Switch>
       </Router>
       <Footer
-        title="Footer"
-        description="Something here to give the footer a purpose!"
+        title='Footer'
+        description='Something here to give the footer a purpose!'
       />
-    </React.Fragment>
+    </Container>
   );
 };
 

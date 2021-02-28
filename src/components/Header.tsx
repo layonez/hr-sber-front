@@ -7,6 +7,8 @@ import IconButton from '@material-ui/core/IconButton';
 import SearchIcon from '@material-ui/icons/Search';
 import Typography from '@material-ui/core/Typography';
 import Link from '@material-ui/core/Link';
+import Badge from '@material-ui/core/Badge';
+import NotificationsIcon from '@material-ui/icons/Notifications';
 
 const useStyles = makeStyles((theme) => ({
   toolbar: {
@@ -14,6 +16,8 @@ const useStyles = makeStyles((theme) => ({
   },
   toolbarTitle: {
     flex: 1,
+    fontWeight: 900,
+    color: 'mediumblue',
   },
   toolbarSecondary: {
     justifyContent: 'space-between',
@@ -22,6 +26,12 @@ const useStyles = makeStyles((theme) => ({
   toolbarLink: {
     padding: theme.spacing(1),
     flexShrink: 0,
+  },
+  bellContainer: {
+    padding: theme.spacing(2),
+    '> .MuiBadge-badge': {
+      margin: theme.spacing(2),
+    },
   },
 }));
 
@@ -32,12 +42,11 @@ export default function Header(props: { sections: any; title: any }) {
   return (
     <React.Fragment>
       <Toolbar className={classes.toolbar}>
-        <Button size="small">Subscribe</Button>
         <Typography
-          component="h2"
-          variant="h5"
-          color="inherit"
-          align="center"
+          component='h2'
+          variant='h5'
+          color='inherit'
+          align='left'
           noWrap
           className={classes.toolbarTitle}
         >
@@ -46,22 +55,30 @@ export default function Header(props: { sections: any; title: any }) {
         <IconButton>
           <SearchIcon />
         </IconButton>
-        <Button variant="outlined" size="small">
-          Sign up
+        <div className={classes.bellContainer}>
+          <Badge badgeContent={100} color='secondary'>
+            <IconButton>
+              <NotificationsIcon />
+            </IconButton>
+          </Badge>
+        </div>
+
+        <Button variant='outlined' size='small'>
+          Артем
         </Button>
       </Toolbar>
       {sections && (
         <Toolbar
-          component="nav"
-          variant="dense"
+          component='nav'
+          variant='dense'
           className={classes.toolbarSecondary}
         >
           {sections.map((section: { title: string; url: string }) => (
             <Link
-              color="inherit"
+              color='inherit'
               noWrap
               key={section.title}
-              variant="body2"
+              variant='body2'
               href={section.url}
               className={classes.toolbarLink}
             >

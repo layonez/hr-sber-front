@@ -39,6 +39,9 @@ export const Feed = types
   })
   .actions((self) => ({
     addPost(post: SnapshotIn<typeof Post> | Instance<typeof Post>) {
+      const maxId = Math.max(...self.posts.map((o) => o.id), 0);
+      post.id = maxId;
+      post.cutContent = `${post.content.substring(0, 180)}...`;
       self.posts.push(post);
     },
     remove(post: SnapshotIn<typeof Post>) {
