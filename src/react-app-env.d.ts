@@ -19,6 +19,16 @@ declare module '@editorjs/header' {
   export default value;
 }
 
+declare module '@editorjs/inline-code' {
+  const value: any;
+  export default value;
+}
+
+declare module '@editorjs/link' {
+  const value: any;
+  export default value;
+}
+
 declare module '@editorjs/list' {
   const value: any;
   export default value;

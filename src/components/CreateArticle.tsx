@@ -5,6 +5,7 @@ import Button from '@material-ui/core/Button';
 import Container from '@material-ui/core/Container';
 import MenuItem from '@material-ui/core/MenuItem';
 import TextField from '@material-ui/core/TextField';
+import Typography from '@material-ui/core/Typography';
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 import { v4 as uuidv4 } from 'uuid';
 import { observer } from 'mobx-react-lite';
@@ -16,9 +17,10 @@ import SimpleImage from '@editorjs/simple-image';
 import Embed from '@editorjs/embed';
 import Checklist from '@editorjs/checklist';
 import Quote from '@editorjs/quote';
+import LinkTool from '@editorjs/link';
+import InlineCode from '@editorjs/inline-code';
 
 import { useMst } from '../models/Root';
-import Header from './Header';
 
 const useStyles = makeStyles({
   root: {
@@ -64,6 +66,11 @@ const CreateArticle: React.FC<Props> = observer(() => {
           quote: {
             class: Quote,
             inlineToolbar: true,
+          },
+          linkTood: LinkTool,
+          inlineCode: {
+            class: InlineCode,
+            shortcut: 'CMD+SHIFT+M',
           },
         },
 
@@ -121,8 +128,10 @@ const CreateArticle: React.FC<Props> = observer(() => {
 
   return (
     <React.Fragment>
-      <Header title="Create article" />
       <Container className={classes.root}>
+        <Typography variant="h3" color="primary">
+          Создание статьи
+        </Typography>
         <TextField
           className={classes.select}
           label="Заголовок статьи/шаблона"

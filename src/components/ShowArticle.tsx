@@ -6,13 +6,13 @@ import ButtonGroup from '@material-ui/core/ButtonGroup';
 import Container from '@material-ui/core/Container';
 import MenuItem from '@material-ui/core/MenuItem';
 import TextField from '@material-ui/core/TextField';
+import Typography from '@material-ui/core/Typography';
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 import InsertCommentIcon from '@material-ui/icons/InsertComment';
 import PriorityHighIcon from '@material-ui/icons/PriorityHigh';
 import ShareIcon from '@material-ui/icons/Share';
 import ThumbDownIcon from '@material-ui/icons/ThumbDown';
 import ThumbUpIcon from '@material-ui/icons/ThumbUp';
-import { v4 as uuidv4 } from 'uuid';
 import { observer } from 'mobx-react-lite';
 
 import EditorJS from '@editorjs/editorjs';
@@ -22,9 +22,10 @@ import SimpleImage from '@editorjs/simple-image';
 import Embed from '@editorjs/embed';
 import Checklist from '@editorjs/checklist';
 import Quote from '@editorjs/quote';
+import LinkTool from '@editorjs/link';
+import InlineCode from '@editorjs/inline-code';
 
 import { useMst } from '../models/Root';
-import Header from './Header';
 
 const useStyles = makeStyles({
   root: {
@@ -71,6 +72,11 @@ const ShowArticle: React.FC<Props> = observer(() => {
             class: Quote,
             inlineToolbar: true,
           },
+          linkTood: LinkTool,
+          inlineCode: {
+            class: InlineCode,
+            shortcut: 'CMD+SHIFT+M',
+          },
         },
 
         data: JSON.parse(article?.content || ''),
@@ -83,7 +89,9 @@ const ShowArticle: React.FC<Props> = observer(() => {
 
   return (
     <React.Fragment>
-      <Header title={article?.title} />
+      <Typography variant="h3" color="primary">
+        {article?.title}
+      </Typography>
       <Container className={classes.root}>
         <div id="editorjs"></div>
         <ButtonGroup color="primary" aria-label="outlined primary button group">

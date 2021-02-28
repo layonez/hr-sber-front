@@ -171,7 +171,7 @@ const Feed: React.FC<Props> = observer(() => {
                     <Typography variant='subtitle1' paragraph>
                       {post.cutContent}
                     </Typography>
-                    <Typography variant='subtitle1' color='primary'>
+                    <Typography variant='subtitle1' color='primary' component={Link} to={`/article/${post.id}`}>
                       Продолжить чтение...
                     </Typography>
                     {/* <Hidden xsDown>
@@ -202,6 +202,8 @@ const Feed: React.FC<Props> = observer(() => {
                       key={template.name}
                       button
                       className={classes.dense}
+                      component={Link}
+                      to="article"
                     >
                       <ListItemIcon>{template.icon}</ListItemIcon>
                       <ListItemText id={labelId} primary={template.name} />
@@ -225,6 +227,8 @@ const Feed: React.FC<Props> = observer(() => {
                 // color='secondary'
                 // className={classes.button}
                 startIcon={<RateReviewIcon />}
+                component={Link}
+                to="/article"
               >
                 Поделиться впечатлениями о курсе
               </Button>
