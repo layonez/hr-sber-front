@@ -40,7 +40,7 @@ const CreateArticleDemo: React.FC<Props> = observer(() => {
   const { feed, templates } = useMst();
 
   const [title, setTitle] = React.useState('');
-  const [selectedTemplate, setSelectedTemplate] = React.useState('');
+  const [selectedTemplate, setSelectedTemplate] = React.useState('d1f4326-a2cc-4ca7-97b8-6273bf476821');
   const [editor, setEditor] = React.useState<EditorJS | null>(null);
   React.useEffect(() => {
     setEditor(
