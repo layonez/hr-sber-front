@@ -8,6 +8,7 @@ import TextField from '@material-ui/core/TextField';
 import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
+import { v4 as uuidv4 } from 'uuid';
 import { useMst } from '../models/Root';
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -55,8 +56,8 @@ export default function CreatorModal() {
 
   const handleSave = () => {
     feed.addPost({
-      id: 1,
-      type: 'статья',
+      id: uuidv4(),
+      type: 'article',
       title: title,
       content: content,
       cutContent: content,

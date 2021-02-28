@@ -1,9 +1,11 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import Container from '@material-ui/core/Container';
 import MenuItem from '@material-ui/core/MenuItem';
 import TextField from '@material-ui/core/TextField';
+import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 import { v4 as uuidv4 } from 'uuid';
 import { observer } from 'mobx-react-lite';
 
@@ -75,7 +77,7 @@ const CreateArticle: React.FC<Props> = observer(() => {
       ?.save()
       .then((outputData) => {
         feed.addPost({
-          id: 1,
+          id: uuidv4(),
           type: 'article',
           title: title,
           content: JSON.stringify(outputData),
@@ -159,6 +161,15 @@ const CreateArticle: React.FC<Props> = observer(() => {
           onClick={onCreateTemplate}
         >
           Создать шаблон
+        </Button>
+        <Button
+          className={classes.button}
+          variant="outlined"
+          color="primary"
+          component={Link}
+          to="/"
+        >
+          <ArrowBackIcon />
         </Button>
       </Container>
     </React.Fragment>

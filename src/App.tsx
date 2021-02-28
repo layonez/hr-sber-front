@@ -4,6 +4,7 @@ import Typography from '@material-ui/core/Typography';
 import Link from '@material-ui/core/Link';
 
 import CreateArticle from './components/CreateArticle';
+import ShowArticle from './components/ShowArticle';
 import CreateSurvey from './components/CreateSurvey';
 import ExampleSurvey from './components/ExampleSurvey';
 import Footer from './components/Footer';
@@ -11,9 +12,9 @@ import Feed from './components/Feed';
 
 const Copyright: React.FC = () => {
   return (
-    <Typography variant='body2' color='textSecondary' align='center'>
+    <Typography variant="body2" color="textSecondary" align="center">
       {'Copyright © '}
-      <Link color='inherit' href='https://material-ui.com/'>
+      <Link color="inherit" href="https://material-ui.com/">
         Your Website
       </Link>
       {new Date().getFullYear()}
@@ -26,23 +27,26 @@ const App: React.FC = () => {
     <React.Fragment>
       <Router>
         <Switch>
-          <Route path='/article'>
+          <Route path="/article/:id">
+            <ShowArticle />
+          </Route>
+          <Route path="/article">
             <CreateArticle />
           </Route>
-          <Route path='/survey/example'>
+          <Route path="/survey/example">
             <ExampleSurvey />
           </Route>
-          <Route path='/survey'>
+          <Route path="/survey">
             <CreateSurvey />
           </Route>
-          <Route path='/' default>
+          <Route path="/" default>
             <Feed />
           </Route>
         </Switch>
       </Router>
       <Footer
-        title='Footer'
-        description='Something here to give the footer a purpose!'
+        title="Footer"
+        description="Something here to give the footer a purpose!"
       />
     </React.Fragment>
   );

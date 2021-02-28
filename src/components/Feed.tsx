@@ -89,7 +89,7 @@ const Feed: React.FC<Props> = observer(() => {
                   <Typography variant='subtitle1' paragraph>
                     {post.cutContent}
                   </Typography>
-                  <Typography variant='subtitle1' color='primary'>
+                  <Typography variant='subtitle1' color='primary' component={Link} to={`/article/${post.id}`}>
                     Continue reading...
                   </Typography>
                 </CardContent>
