@@ -12,7 +12,7 @@ export const Tag = types.model({
 
 export const Post = types
   .model({
-    id: types.string,
+    id: types.number,
     type: types.string!,
     title: types.string!,
     content: types.string,
