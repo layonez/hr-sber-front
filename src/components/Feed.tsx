@@ -1,6 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { makeStyles, Theme, createStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
+import Button from '@material-ui/core/Button';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
@@ -61,7 +63,14 @@ const Feed: React.FC<Props> = observer(() => {
         <Typography variant='h5' color='textPrimary' align='left'>
           МОЯ ЛЕНТА
         </Typography>
-
+        <Button
+          component={Link}
+          to="/article"
+          color="primary"
+          variant="contained"
+        >
+          Написать статью
+        </Button>
         <CreatorModal />
       </div>
 
@@ -78,7 +87,7 @@ const Feed: React.FC<Props> = observer(() => {
                     {new Intl.DateTimeFormat().format(post.date)}
                   </Typography>
                   <Typography variant='subtitle1' paragraph>
-                    {post.content}
+                    {post.cutContent}
                   </Typography>
                   <Typography variant='subtitle1' color='primary'>
                     Continue reading...

@@ -2,13 +2,16 @@ import { useContext, createContext } from 'react';
 import { types, Instance, onSnapshot } from 'mobx-state-tree';
 
 import { Feed } from './Feed';
+import { Templates } from './Templates';
 
 const RootModel = types.model({
   feed: Feed,
+  templates: Templates,
 });
 
 let initialState = RootModel.create({
   feed: { posts: [] },
+  templates: { templates: []}
 });
 
 const data = localStorage.getItem('rootState');
